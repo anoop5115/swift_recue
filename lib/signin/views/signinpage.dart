@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:swift_recue/signin/models/components/textfield.dart';
+import 'package:swift_recue/signin/components/textfield.dart';
 
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController password = TextEditingController();
     TextEditingController email = TextEditingController();
     return Scaffold(
       body: SafeArea(
@@ -31,27 +32,12 @@ class SignInPage extends StatelessWidget {
               ),
               Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: textField("username", Icons.email, false, email)),
+                  child: textField("email", Icons.email, false, email,
+                      TextInputType.emailAddress)),
               Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
-                    hintStyle:
-                        const TextStyle(color: Colors.white, fontSize: 18),
-                    fillColor: Colors.black38,
-                    filled: true,
-                    hintText: "Enter password",
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black38),
-                        borderRadius: BorderRadius.circular(25)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black38),
-                        borderRadius: BorderRadius.circular(25)),
-                  ),
-                ),
-              ),
+                  padding: const EdgeInsets.all(15.0),
+                  child: textField("password", Icons.lock, true, password,
+                      TextInputType.text)),
               const SizedBox(
                 height: 20,
               ),
@@ -63,8 +49,33 @@ class SignInPage extends StatelessWidget {
                           backgroundColor: Colors.green,
                           foregroundColor: Colors.white,
                           minimumSize: const Size(double.infinity, 50)),
-                      onPressed: () {},
-                      child: const Text("SignUp")))
+                      onPressed: () => Get.offNamed('/home'),
+                      child: const Text("Signin"))),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("don't have an account",
+                      style: TextStyle(
+                        fontSize: 15,
+                      )),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  InkWell(
+                    onTap: () => Get.toNamed('/signup'),
+                    child: Text(
+                      "signup",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

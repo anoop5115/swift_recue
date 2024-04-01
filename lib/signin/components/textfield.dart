@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 TextField textField(String Text, IconData icon, bool isPasswordType,
-    TextEditingController controller) {
+    TextEditingController? controller, TextInputType? type) {
   return TextField(
+    keyboardType: type,
     controller: controller,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
     decoration: InputDecoration(
       prefixIcon: Icon(icon),
-      hintStyle: const TextStyle(color: Colors.white, fontSize: 18),
-      fillColor: Colors.black38,
+      hintStyle:
+          const TextStyle(color: Color.fromARGB(255, 6, 6, 6), fontSize: 18),
+      fillColor: Color.fromARGB(96, 254, 254, 254),
       filled: true,
       hintText: "${Text}",
       focusedBorder: OutlineInputBorder(
