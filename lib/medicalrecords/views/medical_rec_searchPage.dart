@@ -30,7 +30,14 @@ class MedicalRecordSearch extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                    color: Colors.blueAccent.withOpacity(.5),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Colors.blue,
+                        Colors.grey.withOpacity(.4),
+                      ],
+                    ),
                     borderRadius: BorderRadius.circular(20)),
                 height: height / 4,
                 width: double.infinity,

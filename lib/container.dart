@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Container container(String text) {
+Container container(String text, {required double height}) {
   return Container(
     padding: EdgeInsets.all(10),
     width: double.infinity,

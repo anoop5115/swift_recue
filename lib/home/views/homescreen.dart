@@ -3,7 +3,7 @@ import 'package:flutter_application_1/home/controller/homecontroller.dart';
 import 'package:flutter_application_1/home/medicalrecords/medicalrecord.dart';
 import 'package:flutter_application_1/home/views/home_page.dart';
 import 'package:flutter_application_1/medicalrecords/views/medical_rec_searchPage.dart';
-import 'package:flutter_application_1/profile/views/profile.dart';
+import 'package:flutter_application_1/profile/views/Profile_page.dart';
 
 import 'package:flutter_application_1/video_call/video_call_priorpage.dart';
 import 'package:get/get.dart';
@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
 
               MedicalRecordSearch(),
               HomePage2(),
-              ProfilePage(),
+              ProfileScreen()
             ],
           ),
         ),

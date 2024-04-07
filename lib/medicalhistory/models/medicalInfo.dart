@@ -65,7 +65,7 @@ List<MedicalInfo> MedicalInfoList = [
         symptoms: "Fever, cough",
         conclusion: "Recovered",
         medicines: ["Paracetamol", "Cough Syrup"],
-        image: AssetImage("assets/image2.jpg"),
+        image: AssetImage("lib/assets/chest.jpeg"),
       ),
     ],
   ),

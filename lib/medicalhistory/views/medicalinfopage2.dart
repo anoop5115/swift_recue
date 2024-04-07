@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/medicalhistory/models/medicalInfo.dart';
+import 'package:flutter_application_1/medicalhistory/views/reports.dart';
+import 'package:get/get.dart';
 
 class Page2 extends StatelessWidget {
   Treat_Hist rec;
@@ -128,7 +130,9 @@ class Page2 extends StatelessWidget {
                 height: height * .03,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.to(Report(rec: rec));
+                },
                 child: Container(
                   width: 100,
                   height: 100,
@@ -139,7 +143,7 @@ class Page2 extends StatelessWidget {
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
                       colors: [
-                        Color.fromARGB(255, 230, 68, 13),
+                        Color.fromARGB(255, 255, 79, 21),
                         Color.fromARGB(255, 233, 233, 233),
                       ],
                     ),
