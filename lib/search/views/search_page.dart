@@ -42,8 +42,9 @@ class SearchPage extends StatelessWidget {
                 ),
               ),
               SliverList(
-                  delegate:
-                      SliverChildBuilderDelegate((context, index) => Padding(
+                  delegate: SliverChildBuilderDelegate(
+                      childCount: 5,
+                      (context, index) => Padding(
                             padding: EdgeInsets.only(top: 5, bottom: 5),
                             child: Container(
                               decoration: BoxDecoration(

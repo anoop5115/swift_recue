@@ -35,7 +35,7 @@ class MedicalRecordSearch extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [
                         Colors.blue,
-                        Colors.grey.withOpacity(.4),
+                        Color.fromARGB(255, 162, 233, 189).withOpacity(.4),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20)),
@@ -48,7 +48,7 @@ class MedicalRecordSearch extends StatelessWidget {
                       "Get Medical Record by ID",
                       style: TextStyle(fontSize: height / 40),
                     ),
-                    textField("enter patient id", Icons.receipt, false,
+                    textField("Enter Patient ID", Icons.receipt, false,
                         idcontroller, TextInputType.number),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

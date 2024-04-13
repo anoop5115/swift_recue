@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                 iconActiveColor: Colors.white,
                 text: "Medical Info",
                 // iconActiveColor: Colors.green,
-                icon: Icons.info_outline,
+                icon: Icons.more_vert,
               ),
               GButton(
                 iconActiveColor: Colors.white,
