@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -9,11 +10,13 @@ import 'package:get/get.dart';
 
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
+  final email = TextEditingController();
+  final password = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController password = TextEditingController();
-    TextEditingController email = TextEditingController();
+    
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -49,7 +52,7 @@ class SignInPage extends StatelessWidget {
                           backgroundColor: Colors.green,
                           foregroundColor: Colors.white,
                           minimumSize: const Size(double.infinity, 50)),
-                      onPressed: () => Get.offNamed('/home'),
+                      onPressed: () => signIn(),
                       child: const Text("Signin"))),
               SizedBox(
                 height: 10,
@@ -81,5 +84,24 @@ class SignInPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email.text.trim(),
+        password: password.text.trim(),
+      );
+      Get.toNamed('/home');
+      // Navigate to home page after successful sign-in
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    } catch (e) {
+      print(e);
+    }
   }
 }

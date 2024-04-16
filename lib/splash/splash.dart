@@ -1,6 +1,9 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/signin/views/signinpage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../wrapper.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -17,7 +20,7 @@ class Splash extends StatelessWidget {
         duration: 100,
         backgroundColor: Colors.white,
         splashTransition: SplashTransition.fadeTransition,
-        nextScreen: SignInPage(),
+        nextScreen: Wrapper(),
       ),
     );
   }

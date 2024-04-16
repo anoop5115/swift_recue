@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "337509853755",
-    "project_id": "zegocloud-test",
-    "storage_bucket": "zegocloud-test.appspot.com"
+    "project_number": "763705274924",
+    "project_id": "zegodbms",
+    "storage_bucket": "zegodbms.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:337509853755:android:71d30c797bd5d55312ca1e",
+        "mobilesdk_app_id": "1:763705274924:android:becae6a524d52d58fbd789",
         "android_client_info": {
           "package_name": "com.example.zegocloud_test"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBzXmIUau22c--jlFmAKqkcebDRtvwBXc"
+          "current_key": "AIzaSyAx6_Qi0QIuM6Uy02KBAwNDU8QW0EFqxE4"
         }
       ],
       "services": {

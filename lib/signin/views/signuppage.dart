@@ -1,17 +1,36 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/profile/views/model/Profiledetails.dart';
 import 'package:flutter_application_1/signin/components/snackbar.dart';
 import 'package:flutter_application_1/signin/components/textfield.dart';
+import 'package:flutter_application_1/wrapper.dart';
 import 'package:get/get.dart';
 
 class SignUpPage extends StatelessWidget {
+  final Profiledetails pfd = Profiledetails();
+
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController repassword = TextEditingController();
   TextEditingController contact = TextEditingController();
   TextEditingController city = TextEditingController();
   SignUpPage({super.key});
+
+  Future signup() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email.text.trim(),
+      password: password.text.trim(),
+    );
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      final uid = user.uid;
+      pfd.addDetails(email.text, contact.text, city.text, uid);
+    }
+    Get.offAllNamed('/wrapper');
+    // Navigate to home page after successful sign-in
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +92,8 @@ class SignUpPage extends StatelessWidget {
                         if (password.text != repassword.text) {
                           snackbar("Password error", "password does't match",
                               SnackPosition.TOP);
+                        } else {
+                          signup();
                         }
                       },
                       child: const Text("Signup"))),
