@@ -5,22 +5,18 @@ class MedicalController extends GetxController {
   List filteredList = <MedicalInfo>[].obs;
   var f = RxInt(0);
   void search(int uid) {
+    filteredList.clear();
     for (MedicalInfo i in MedicalInfoList) {
       if (i.uid == uid) {
         f.value = 1;
-        print(f.value);
 
-        print(i.name);
         filteredList.add(i);
-        print(filteredList);
+
         break;
       } else {
         f.value = 0;
-        print(f.value);
-        filteredList.clear();
-        print(filteredList);
 
-        print("not found");
+        filteredList.clear();
       }
     }
   }
