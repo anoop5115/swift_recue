@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -74,21 +72,37 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: double.infinity, height: 60),
                         itemProfile(
-                            'Name', record['name'], CupertinoIcons.person),
+                            'Name',
+                            record['name'] == null
+                                ? 'add details in editprofile'
+                                : record['name'],
+                            CupertinoIcons.person),
                         const SizedBox(height: 10),
                         itemProfile(
                             'Phone', record['phone'], CupertinoIcons.phone),
                         const SizedBox(height: 10),
-                        itemProfile('Address/City', 'New York, California',
+                        itemProfile('Address/City', record['city'],
                             CupertinoIcons.location),
                         const SizedBox(height: 10),
-                        itemProfile('Vehicle Model', 'anoop',
+                        itemProfile(
+                            'Vehicle Model',
+                            record['vmodel'] == null
+                                ? 'add details in editprofile'
+                                : record['vmodel'],
                             CupertinoIcons.car_detailed),
                         const SizedBox(height: 10),
-                        itemProfile('Vehicle Type', 'Patient Transport Vehicle',
+                        itemProfile(
+                            'Vehicle Type',
+                            record['vtype'] == null
+                                ? 'add details in editprofile'
+                                : record['vtype'],
                             CupertinoIcons.info),
                         const SizedBox(height: 10),
-                        itemProfile('Vehicle No.', 'JH-01-CJ-9528',
+                        itemProfile(
+                            'Vehicle No.',
+                            record['vnumber'] == null
+                                ? 'add details in editprofile'
+                                : record['vnumber'],
                             CupertinoIcons.number),
                         const SizedBox(height: 50),
                         SizedBox(
