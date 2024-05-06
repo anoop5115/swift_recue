@@ -12,9 +12,9 @@ class VideoCallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ZegoUIKitPrebuiltCall(
-      appID: 2038335105,
+      appID: 1367529522,
       appSign:
-          'a513163d079054b50d5bc450f5d6d3abfd09b4357c6f668c0980c4edfc6339d8',
+          '58047e295d976616814d1e6bc66cc9d88b26331b8c48e0551d63094a7d733b77',
       callID: callID,
       userID: userID,
       userName: "username$userID",
