@@ -1,16 +1,33 @@
-# flutter_application_1
+# Accident Assistance App
 
-A new Flutter project.
+This Flutter project is designed to efficiently utilize the time between when a person meets with an accident and when they are taken to the hospital. The app provides real-time assistance and connects users with emergency services to minimize response time in critical situations.
+
+## Video Demo
+
+Click on the image below to watch a demo video of the app:
+
+[![Watch the video](https://img.youtube.com/vi/hWBeOdJyoMQ/maxresdefault.jpg)](https://youtu.be/hWBeOdJyoMQ?feature=shared)
+
+## Features
+
+- **Real-Time Emergency Assistance**: The app guides users through the steps they should take immediately after an accident.
+- **Quick Access to Emergency Services**: Connects users to emergency contacts and services in a few taps.
+- **Critical Data Sharing**: Option to share essential details such as location, health data, and emergency contacts.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Follow these instructions to run the Flutter project on your local machine.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
+- [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/) with Flutter and Dart extensions.
+- A device or emulator running Android/iOS.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation Steps
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/accident-assistance-app.git
+   cd accident-assistance-app
